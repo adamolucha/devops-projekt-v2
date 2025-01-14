@@ -1,16 +1,20 @@
 name: CI
 
-on: 
+on:
   push:
-    branches: [ "main" ]
-  pull_request: 
-    branch: [ "main" ] 
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Pull repo
-    uses: actions/checkout@v4
-    - name: print hello
-      run: echo "Hello"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print hello
+        run: echo "Hello"
